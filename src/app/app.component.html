@@ -1,5 +1,70 @@
-<button>
-toggle div tag
+<button (click)="toogleTag()">{{show}}
 </button>
 
-<div *ngif="showMe">toggle me on but
+
+
+
+<div [hidden]="showMe"  >this is rushi</div>
+
+<hr>
+<br>
+
+<div [ngClass]="{'green' : toggle, 'red': !toggle}">
+    if you click green text or button color green or same for red
+</div>
+
+
+<button (click)="buttonColor()" [ngClass]="{'green' : toggle, 'red': !toggle}">
+    {{status}}
+</button>
+
+<hr>
+
+<br>
+<!---
+<div [ngClass]=" setRedClass ? 'red' : 'green' ">
+    if you click toggle button it will show you two color red or green
+</div>
+<button (click)="toggleClass()">Toggle Class</button>
+-->
+
+-->
+
+<br><br>
+<!--
+<button (click)="showFunction()">click</button>
+<input type="text" [(ngModel)]="userName"/>
+{{userName}}
+
+<br>
+<br>
+
+<button (click)="showFunction()">click</button>
+username:-<input type="text" [(ngModel)]="username"/> <br><br>
+usersurname:-<input type="text" [(ngModel)]="usersurname"/>
+
+<h2>hey {{username}} {{usersurname}}</h2>
+-->
+
+<input type="text" style="border:1px solid #ff0000" />
+
+<br><br>
+<!--
+username:-<input type="text" [(ngModel)]="uname"/> 
+{{uname.length > 6 ? [class]="error":[class]="success"}}-->
+
+
+<h3>Nmae Change Dyanamic </h3>
+userName : <input type="text" [(ngModel)] = "userName" /> <br>
+userSurname : <input type="text" [(ngModel)] = "userSurname" /><br>
+ age : <input type="text" [(ngModel)] = "age" />
+
+ Hello, {{userName}}  {{userSurname}} You are {{age >= 18 ? "Adult.": "not Adult"}}<br><br>
+
+ <!--input text border color change using two way binding -->
+ <h3>Border Color Change  </h3>
+
+ <input type="text" [ngClass]="firstName.length > 5? 'green' : 'red' " [(ngModel)]="firstName" />
+
+
+ <app-mycomp></app-mycomp>
